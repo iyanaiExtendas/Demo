@@ -7,10 +7,17 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@extendas/extendas-component-library": "^0.14.0",
+    "@jest/globals": "^29.5.0",
     "@mdi/font": "5.9.55",
-    "pinia": "^2.1.4",
+    "axios": "^1.4.0",
+    "axios-mock-adapter": "^1.21.4",
+    "core-js": "^3.8.3",
+    "firebase": "^9.23.0",
+    "pinia": "^2.0.36",
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "*",
+    "typeface-roboto": "^1.1.13",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuetify": "^3.0.0-beta.0",
