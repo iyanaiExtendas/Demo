@@ -1,6 +1,5 @@
 export default [
     {
-        id: '1',
         username: "admin1",
         email: "admin1@gmail.com",
         password: "P@ssword!",
@@ -10,7 +9,6 @@ export default [
         roles: ["SUPER_ADMIN", "ADMIN", "USER"]
     },
     {
-        id: '2',
         username: "admin2",
         email: "admin2@gmail.com",
         password: "P@ssword!",
@@ -20,7 +18,6 @@ export default [
         roles: ["SUPER_ADMIN", "ADMIN"]
     },
     {
-        id: '3',
         username: "admin3",
         email: "admin3@gmail.com",
         password: "P@ssword!",
@@ -30,7 +27,6 @@ export default [
         roles: ["MANAGER", "USER"]
     },
     {
-        id: '4',
         username: "admin4",
         email: "admin4@gmail.com",
         password: "P@ssword!",
@@ -40,7 +36,6 @@ export default [
         roles: ["SUPER_ADMIN", "MANAGER"]
     },
     {
-        id: '5',
         username: "admin5",
         email: "admin5@gmail.com",
         password: "P@ssword!",
