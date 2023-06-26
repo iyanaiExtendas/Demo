@@ -3,6 +3,7 @@
   <Login
       v-if="!isLoggedIn"
       @loggedIn="login"/>
+
   <ExtSkeleton
       v-else
       @logout="logOut"/>
@@ -15,13 +16,11 @@
 import ExtSkeleton from '@/components/Ext-Skeleton'
 import { addDoc, collection, setDoc, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import db from '@/firebase/init';
-import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile} from 'firebase/auth'
+import { createUserWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase/init'
 import usersData from '@/initData/users'
 import chargePointData from '@/initData/chargePoints'
 import Login from "@/views/Login";
-
-
 
 export default {
   name: 'App',
@@ -30,61 +29,57 @@ export default {
     Login,
     ExtSkeleton,
   },
+
   data() {
     return {
       isLoggedIn: false,
-      isAuthResolved: false
     }
   },
-  //Only used to populate database with values when creating it or if it is empy
+
+  //Only used to populate database with values when creating it or if it is empty
   created() {
     // this.createUsers()
     // this.createChargePoints()
+  },
+
+  mounted() {
     onAuthStateChanged(auth, (user) => {
       this.isLoggedIn = !!user;
-      this.isAuthResolved = true;
     });
   },
+
   methods: {
-
     async createUsers() {
-      // 'users' collection reference
       const colRef = collection(db, 'users');
+      const users = usersData;
 
-      // Data from the JavaScript file
-      const users = usersData
-
-      // Create a document for each user
       for (const user of users) {
-        await addDoc(colRef, user);
-        // register new user
-        createUserWithEmailAndPassword(auth, user.email, user.password)
-            .then((credential) => {
+        try {
+          await addDoc(colRef, user);
+          const credential = await createUserWithEmailAndPassword(auth, user.email, user.password);
+          const authUser = credential.user;
 
-              updateProfile(auth.currentUser, {
-                displayName: user.username
-              })
-              // registered and signed in
-              console.log(credential.user)
-            })
-            .catch((error) => {
-              console.log(error.message)
-            })
+          await updateProfile(authUser, {
+            displayName: user.username
+          });
+
+          console.log("Users collection created with authentication", authUser);
+        } catch (error) {
+          console.log('Error creating user:', error.message);
+        }
       }
-
-      console.log("Users collection created, with authentication");
     },
 
     async createChargePoints() {
-      // 'chargePoints' collection reference
       const colRef = collection(db, 'chargePoints');
+      const chargePoints = chargePointData;
 
-      // Data from the JavaScript file
-      const chargePoints = chargePointData
-
-      // Create a document for each chargePoint
       for (const chargePoint of chargePoints) {
-        await addDoc(colRef, chargePoint);
+        try {
+          await addDoc(colRef, chargePoint);
+        } catch (error) {
+          console.log('Error creating charge point:', error.message);
+        }
       }
 
       console.log("chargePoints collection created");
@@ -95,16 +90,15 @@ export default {
     },
 
     logOut() {
-
       signOut(auth)
           .then(() => {
-            // user signed-out
-            alert("You are logged out")
-
+            alert("You are logged out");
+            this.isLoggedIn = false;
           })
-
+          .catch((error) => {
+            console.log('Error signing out:', error.message);
+          });
     }
-
   }
 }
 </script>

@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from "@/views/Dashboard";
 import Users from "@/views/Users";
 import ChargePoints from "@/views/ChargePoints";
-import Login from "@/views/Login";
-import ExtSkeleton from "@/components/Ext-Skeleton";
-
 
 const routes = [
   {

@@ -85,19 +85,17 @@ export default {
       const q = query(usersRef, where("username", "==", username));
 
       try {
-          const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(q);
 
-          if (querySnapshot.empty) {
-            // User not found
-            console.log("User not found");
-            return;
-          }
+        if (querySnapshot.empty) {
+          // User not found
+          console.log("User not found");
+          return;
+        }
 
-          // Get the user data from the query result
-          const userDoc = querySnapshot.docs[0];
-          this.userData = userDoc.data();
-
-          console.log("User data:", this.userData);
+        // Get the user data from the query result
+        const userDoc = querySnapshot.docs[0];
+        this.userData = userDoc.data();
 
       } catch (error) {
         console.error('Failed to get user with ID: ', id, error)
