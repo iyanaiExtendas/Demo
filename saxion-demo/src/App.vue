@@ -8,7 +8,6 @@
       v-else
       @logout="logOut"/>
 
-
 </template>
 
 

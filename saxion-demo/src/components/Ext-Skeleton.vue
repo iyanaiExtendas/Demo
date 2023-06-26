@@ -26,7 +26,6 @@ import Notifications from "@/initData/notifications"
 import router from "@/router";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import db, {auth} from '@/firebase/init';
-import { signOut } from 'firebase/auth'
 
 export default {
   name: 'Dashboard',
@@ -34,12 +33,6 @@ export default {
     SkeletonBase,
   },
   emits: ['logout'],
-  props: {
-    identifierAuth: {
-      type: String,
-      required: true,
-    }
-  },
   data() {
     return {
       applicationTitle: 'SPINcpi',
