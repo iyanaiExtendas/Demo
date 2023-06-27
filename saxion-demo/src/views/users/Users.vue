@@ -23,12 +23,15 @@
         <v-alert color="info" icon="mdi-information" dense>No users found.</v-alert>
       </template>
     </v-data-table>
+
   </div>
 </template>
 
 <script>
 import { collection, getDocs, query } from 'firebase/firestore';
 import db from '@/firebase/init';
+import router from '@/router/index'
+import UserEdit from "@/views/users/UserEdit";
 
 export default {
   name: "Users",
@@ -55,17 +58,33 @@ export default {
   methods: {
     async queryUsers() {
       const querySnap = await getDocs(query(collection(db, 'users')));
-      this.users = querySnap.docs.map((doc) => doc.data());
+      this.users = querySnap.docs.map((doc) => {
+        const userData = doc.data();
+        userData.id = doc.id;
+        return userData;
+      });
     },
     viewUser(user) {
       const username =  user.columns.username;
-      // this.$router.push(`/users/${user.id}/edit`);\
-      console.log( username )
+      const selectedUser = this.users.find((u) => u.username === username);
+      console.log( selectedUser )
+
+      const route = router.resolve({
+        name: 'UserOverview',
+        params: { id: selectedUser.id }
+      });
+      this.$router.push(route.path);
     },
     editUser(user) {
       const username =  user.columns.username;
-      // this.$router.push(`/users/${user.id}/edit`);\
-      console.log( username )
+      const selectedUser = this.users.find((u) => u.username === username);
+      console.log( selectedUser )
+
+      const route = router.resolve({
+        name: 'UserEdit',
+        params: { id: selectedUser.id }
+      });
+      this.$router.push(route.path);
 
     },
   },
@@ -75,7 +94,7 @@ export default {
 <style scoped>
 .table-container {
   margin-left: 25px;
-  width: 85%;
+  width: 80%;
 }
 
 .no-data {

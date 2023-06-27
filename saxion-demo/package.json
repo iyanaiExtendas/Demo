@@ -7,9 +7,11 @@
     "b": "vue-cli-service build"
   },
   "dependencies": {
-    "@extendas/extendas-component-library": "^0.14.0",
+    "@babel/core": "^7.0.0",
+    "@extendas/extendas-component-library": "^0.28.0",
     "@jest/globals": "^29.5.0",
     "@mdi/font": "5.9.55",
+    "@rollup/plugin-terser": "^0.4.3",
     "axios": "^1.4.0",
     "axios-mock-adapter": "^1.21.4",
     "core-js": "^3.8.3",
@@ -18,7 +20,7 @@
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "*",
     "typeface-roboto": "^1.1.13",
-    "vue": "^3.2.13",
+    "vue": "^3.3.4",
     "vue-router": "^4.0.3",
     "vuetify": "^3.0.0-beta.0",
     "vuex": "^4.0.0",

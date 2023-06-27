@@ -58,6 +58,7 @@ export default {
           const credential = await createUserWithEmailAndPassword(auth, user.email, user.password);
           const authUser = credential.user;
 
+          //Add user for authentication
           await updateProfile(authUser, {
             displayName: user.username
           });
@@ -88,8 +89,8 @@ export default {
       this.isLoggedIn = true;
     },
 
-    logOut() {
-      signOut(auth)
+    async logOut() {
+      await signOut(auth)
           .then(() => {
             alert("You are logged out");
             this.isLoggedIn = false;
