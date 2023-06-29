@@ -1,10 +1,10 @@
 <template>
-  <SubViewHeader title="Overview" />
+  <SubViewHeader title="User Overview" />
+
   <FormOverview
       :form-fields="formFields"
       :edit-route-path="editRoute.path"
       @delete-item-by-id="deleteUser" />
-
 
 </template>
 
@@ -12,7 +12,7 @@
 import SubViewHeader from "@/components/SubViewHeader";
 import FormOverview from "@extendas/extendas-component-library/src/components/form-types/FormOverview";
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
-import {deleteUser, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import {deleteUser, signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '@/firebase/init.js'
 import db from "@/firebase/init";
 import router from "@/router";

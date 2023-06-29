@@ -3,6 +3,7 @@ import Dashboard from "@/views/Dashboard";
 import Users from "@/views/users/Users";
 import UserOverview from "@/views/users/UserOverview";
 import UserEdit from "@/views/users/UserEdit";
+import UserAdd from "@/views/users/UserAdd";
 import ChargePoints from "@/views/chargePoints/ChargePoints";
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
     path: '/Users',
     name: 'Users',
     component: Users
+  },
+  {
+    path: '/User/Add',
+    name: 'UserAdd',
+    component: UserAdd
   },
   {
     path: '/User/:id/Overview',

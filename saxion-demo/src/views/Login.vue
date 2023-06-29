@@ -32,7 +32,7 @@
         <v-alert
             v-if="showAlert"
             color="error"
-            closable
+            closable="true"
             close-label="Close Alert"
             class="mt-5"
         > User not found or does not exist

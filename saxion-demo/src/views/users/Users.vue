@@ -1,5 +1,8 @@
 <template>
-  <h2 class="ml-5 my-8">Overview</h2>
+  <SubViewHeader title="Users" />
+
+  <v-btn prepend-icon="mdi-plus" class="text-white bg-green ml-6 mb-8 text-center" text="Add User" @click="handleClick"></v-btn>
+
   <div class="table-container">
     <v-data-table
         v-model:items-per-page="itemsPerPage"
@@ -32,9 +35,13 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import db from '@/firebase/init';
 import router from '@/router/index'
 import UserEdit from "@/views/users/UserEdit";
+import SubViewHeader from "@/components/SubViewHeader";
 
 export default {
   name: "Users",
+  components: {
+    SubViewHeader,
+  },
   data() {
     return {
       itemsPerPage: 5,
@@ -87,6 +94,13 @@ export default {
       this.$router.push(route.path);
 
     },
+    handleClick() {
+      const route = router.resolve({
+        name: 'UserAdd',
+      });
+      this.$router.push(route.path);
+
+    }
   },
 };
 </script>
