@@ -13,7 +13,7 @@
 
 <script>
 import ExtSkeleton from '@/components/Ext-Skeleton'
-import { addDoc, collection, setDoc, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import db from '@/firebase/init';
 import { createUserWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/firebase/init'
@@ -28,7 +28,6 @@ export default {
     Login,
     ExtSkeleton,
   },
-
   data() {
     return {
       isLoggedIn: false,

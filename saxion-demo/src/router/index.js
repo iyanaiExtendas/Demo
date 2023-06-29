@@ -5,6 +5,10 @@ import UserOverview from "@/views/users/UserOverview";
 import UserEdit from "@/views/users/UserEdit";
 import UserAdd from "@/views/users/UserAdd";
 import ChargePoints from "@/views/chargePoints/ChargePoints";
+import ChargePointAdd from "@/views/chargePoints/ChargePointAdd";
+import ChargePointOverview from "@/views/chargePoints/ChargePointOverview";
+import ChargePointEdit from "@/views/chargePoints/ChargePointEdit";
+import Groups from "@/views/Groups";
 
 const routes = [
   {
@@ -36,6 +40,26 @@ const routes = [
     path: '/ChargePoints',
     name: 'ChargePoints',
     component: ChargePoints
+  },
+  {
+    path: '/ChargePoint/Add',
+    name: 'ChargePointAdd',
+    component: ChargePointAdd
+  },
+  {
+    path: '/ChargePoint/:id/Overview',
+    name: 'ChargePointOverview',
+    component: ChargePointOverview
+  },
+  {
+    path: '/ChargePoint/:id/Edit',
+    name: 'ChargePointEdit',
+    component: ChargePointEdit
+  },
+  {
+    path: '/Groups',
+    name: 'Groups',
+    component: Groups
   },
 
 ]

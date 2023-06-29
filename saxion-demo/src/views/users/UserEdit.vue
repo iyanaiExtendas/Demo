@@ -1,7 +1,7 @@
 <template>
   <SubViewHeader title="Edit User" />
 
-  <FormEdit
+  <form-edit
       :form-fields="formFields"
       :payload="userPayload"
       @edit-item="editUser"
@@ -11,7 +11,6 @@
 
 <script>
 import SubViewHeader from "@/components/SubViewHeader"
-import FormEdit from "@extendas/extendas-component-library/src/components/form-types/FormEdit";
 import db from "@/firebase/init";
 import {doc, getDoc, updateDoc} from "firebase/firestore";
 import router from "@/router";
@@ -20,7 +19,6 @@ export default {
   name: "UserEdit",
   components: {
     SubViewHeader,
-    FormEdit
   },
   data() {
     return {
@@ -33,7 +31,7 @@ export default {
         password: "",
         roles: [],
       },
-      userRoleProperties: ["SUPER_ADMIN", "ADMIN", "MANAGER", "USER"]
+      userRoleOptions: ["SUPER_ADMIN", "ADMIN", "MANAGER", "USER"]
     }
   },
   mounted() {
@@ -47,7 +45,7 @@ export default {
         {title: "password", value: this.user.password, type: "password"},
         {title: "first_name", value: this.user.first_name, type: "text"},
         {title: "last_name", value: this.user.last_name, type: "text"},
-        {title: "roles", value: this.userRoleProperties, type: "properties"},
+        {title: "roles", value: this.userRoleOptions, type: "options"},
       ]
     }
   },

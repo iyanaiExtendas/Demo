@@ -1,6 +1,6 @@
 <template>
   <SubViewHeader title="Add User" />
-  <FormAdd
+  <form-add
       :form-fields="formFields"
       :payload="userPayload"
       @add-item="addUser"/>
@@ -10,7 +10,6 @@
 
 <script>
 import SubViewHeader from "@/components/SubViewHeader";
-import FormAdd from "@extendas/extendas-component-library/src/components/form-types/FormAdd";
 import {addDoc, collection} from "firebase/firestore";
 import db, {auth} from "@/firebase/init";
 import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
@@ -20,7 +19,7 @@ export default {
   name: "UserAdd",
   components: {
     SubViewHeader,
-    FormAdd
+
   },
   data() {
     return {
@@ -33,7 +32,7 @@ export default {
         profilePicture: "",
         roles: [],
       },
-      userRoleProperties: ["SUPER_ADMIN", "ADMIN", "MANAGER", "USER"]
+      userRoleOptions: ["SUPER_ADMIN", "ADMIN", "MANAGER", "USER"]
     }
   },
   computed: {
@@ -45,7 +44,7 @@ export default {
         {title: "first_name", value: '', type: "text"},
         {title: "last_name", value: '', type: "text"},
         {title: "profilePicture", value: '', type: "text"},
-        {title: "roles", value: this.userRoleProperties, type: "properties"},
+        {title: "roles", value: this.userRoleOptions, type: "options"},
       ]
     }
   },

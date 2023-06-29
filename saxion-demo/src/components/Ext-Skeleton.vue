@@ -1,24 +1,25 @@
 <template>
-  <SkeletonBase
+  <skeleton-base
       :application-title="applicationTitle"
       :menu-data="menuData"
       :application-modules="applicationModules"
       :user-data="userData"
       :impersonation-options="impersonationOptions"
       :notifications="notifications"
+      :img-src1="imgSrc1"
+      :img-src2="imgSrc2"
       @set-application-name="setApplicationName"
       @clear-notifications="clearNotifications"
       @go-to-route="goToRoute"
       @go-to-route-search="goToRoute"
       @stop-impersonation="handleStopImpersonation"
       @logout="handleLogout"
-  ></SkeletonBase>
+  ></skeleton-base>
 
 </template>
 
 <script>
 
-import SkeletonBase from "@extendas/extendas-component-library/src/components/skeleton/SkeletonBase"
 import MenuData from "@/initData/menuData"
 import ApplicationModules from "@/initData/applicationModules";
 import ImpersonationOptions from "@/initData/impersonationOptions";
@@ -29,18 +30,18 @@ import db, {auth} from '@/firebase/init';
 
 export default {
   name: 'Dashboard',
-  components: {
-    SkeletonBase,
-  },
+
   emits: ['logout'],
   data() {
     return {
-      applicationTitle: 'SPINcpi',
+      applicationTitle: 'SPIN',
       menuData: MenuData,
       applicationModules: ApplicationModules,
       impersonationOptions: ImpersonationOptions,
       notifications: Notifications,
       userData: {},
+      imgSrc1: require('@/assets/extendas-square-vector.svg'),
+      imgSrc2: require('@/assets/extendas-name-logo-vector.svg'),
     }
   },
   mounted() {

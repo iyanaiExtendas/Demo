@@ -1,5 +1,6 @@
 export default [
     {
+        id: 1,
         name: "Point 1",
         status: "Unavailable",
         auth_name: "author",
@@ -28,13 +29,10 @@ export default [
                 amperage: 44
             }
         ],
-        capabilities: [
-            {id: 'CHARGING_PROFILE_CAPABLE', name: 'Charging profile capable'},
-            {id: 'CREDIT_CARD_PAYABLE', name: 'Credit card payable'},
-            {id: 'REMOTE_START_STOP_CAPABLE', name: 'Remote start stop'},
-        ]
+        capabilities: ['Charging profile capable', 'Credit card payable', 'Remote start stop']
     },
     {
+        id: 2,
         name: "Point 2",
         status: "Unavailable",
         auth_name: "author",
@@ -64,12 +62,13 @@ export default [
             }
         ],
         capabilities: [
-            {id: 'RESERVABLE', name: 'Reservable'},
-            {id: 'RFID_READER', name: 'RFID reader'},
-            {id: 'UNLOCK_CAPABLE', name: 'Unlock capable'},
+            'Reservable',
+            'RFID reader',
+            'Unlock capable',
         ]
     },
     {
+        id: 3,
         name: "Point 3",
         status: "Available",
         auth_name: "author",
@@ -99,9 +98,9 @@ export default [
             }
         ],
         capabilities: [
-            {id: 'RESERVABLE', name: 'Reservable'},
-            {id: 'RFID_READER', name: 'RFID reader'},
-            {id: 'UNLOCK_CAPABLE', name: 'Unlock capable'},
+            'Reservable',
+            'RFID reader',
+            'Unlock capable',
         ]
-    }
+    },
 ]
