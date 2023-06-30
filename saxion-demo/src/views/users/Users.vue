@@ -70,7 +70,6 @@ export default {
     viewUser(user) {
       const username =  user.columns.username;
       const selectedUser = this.users.find((u) => u.username === username);
-      console.log( selectedUser )
 
       const route = router.resolve({
         name: 'UserOverview',

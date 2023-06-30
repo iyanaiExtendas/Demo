@@ -9,12 +9,18 @@ import ChargePointAdd from "@/views/chargePoints/ChargePointAdd";
 import ChargePointOverview from "@/views/chargePoints/ChargePointOverview";
 import ChargePointEdit from "@/views/chargePoints/ChargePointEdit";
 import Groups from "@/views/Groups";
+import Login from "@/views/Login";
 
 const routes = [
   {
     path: '/',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/Users',
