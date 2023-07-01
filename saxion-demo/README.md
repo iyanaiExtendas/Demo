@@ -243,18 +243,11 @@ Here the user 'John' is an entity, and he as a field, accounts with the options 
 
 | Property            | Type    | Description                                                                                                                                                                                                                     | Structure                                                                         | Required |
 |---------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|----------|
-| **
-form-fields**     | Array   | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **
-Title:** the title of the field <br/> **Value:** value of the field<br/>**
-Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>] | TRUE     |
-| **
-edit-route-path** | String  | Route to the edit page of the entity in scope                                                                                                                                                                                   | editRoutePath: '/PATH/TO/EDIT'                                                    | FALSE    |
-| **can-edit**        | Boolean | Enable edit button (toggle if it should be shown or not) **DEFAULT true(
-BOOLEAN)**                                                                                                                                              | canEdit: false                                                                    | FALSE    |
-| **can-delete**      | Boolean | Enable delete button (toggle if it should be shown or not) **DEFAULT true(
-BOOLEAN)**                                                                                                                                            | canDelete: false                                                                  | FALSE    |
-| **
-delete-item**     | Emit    | This emit is sent when the delete button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                       | `<form-overview @delete-item-by-id="methodCall" />`                             | TRUE     |
+| **form-fields**     | Array   | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **Title:** the title of the field <br/> **Value:** value of the field<br/>**Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>] | TRUE     |
+| **edit-route-path** | String  | Route to the edit page of the entity in scope                                                                                                                                                                                   | editRoutePath: '/PATH/TO/EDIT'                                                    | FALSE    |
+| **can-edit**        | Boolean | Enable edit button (toggle if it should be shown or not) **DEFAULT true(BOOLEAN)**                                                                                                                                              | canEdit: false                                                                    | FALSE    |
+| **can-delete**      | Boolean | Enable delete button (toggle if it should be shown or not) **DEFAULT true(BOOLEAN)**                                                                                                                                            | canDelete: false                                                                  | FALSE    |
+| **delete-item**     | Emit    | This emit is sent when the delete button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                       | `<form-overview @delete-item-by-id="methodCall" />`                               | TRUE     |
 
 **Example**
 
@@ -302,15 +295,9 @@ export default {
 
 | Property        | Type   | Description                                                                                                                                                                                                                                                                                 | Structure                                                                            | Required |
 |-----------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------|
-| **
-form-fields** | Array  | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **
-Title:** the title of the field <br/> **
-Value:** for form-add will most likely be empty except for types 'options' and 'entity'<br/>**
-Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>]    | TRUE     |
-| **
-payload**     | Object | The data object payload of the entity to add. Must match structure of entity in backend/database                                                                                                                                                                                            | payloadObj:<br/> { <br/>name: "example", email: "example@gmail.com", age: "21"<br/>} | TRUE     |
-| **
-add-item**    | Emit   | This emit is sent when the add button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                                                                                      | `<form-add @add-item="addItem" />`                                                 | TRUE     |
+| **form-fields** | Array  | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **Title:** the title of the field <br/> **Value:** for form-add will most likely be empty except for types 'options' and 'entity'<br/>**Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>]    | TRUE     |
+| **payload**     | Object | The data object payload of the entity to add. Must match structure of entity in backend/database                                                                                                                                                                                            | payloadObj:<br/> { <br/>name: "example", email: "example@gmail.com", age: "21"<br/>} | TRUE     |
+| **add-item**    | Emit   | This emit is sent when the add button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                                                                                      | `<form-add @add-item="addItem" />`                                                   | TRUE     |
 
 **Example**
 
@@ -358,14 +345,9 @@ export default {
 
 | Property        | Type   | Description                                                                                                                                                                                                                                  | Structure                                                                            | Required |
 |-----------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------|
-| **
-form-fields** | Array  | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **
-Title:** the title of the field <br/> **Value:** values of current entity fields<br/>**
-Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>]    | TRUE     |
-| **
-payload**     | Object | The data object payload of the entity to add. Must match structure of entity in backend/database                                                                                                                                             | payloadObj:<br/> { <br/>name: "example", email: "example@gmail.com", age: "21"<br/>} | TRUE     |
-| **
-edit-item**   | Emit   | This emit is sent when the add button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                                       | `<form-edit @edit-item="methodCall" />`                                             | TRUE     |
+| **form-fields** | Array  | The title and value fields for the form. Passed as an Array of objects, each object representing a field. <br/> **Title:** the title of the field <br/> **Value:** values of current entity fields<br/>**Types:** the data type of the field | formFields:<br/> [<br/>{title: "name", value: this.data.name, type: "text"}<br/>]    | TRUE     |
+| **payload**     | Object | The data object payload of the entity to add. Must match structure of entity in backend/database                                                                                                                                             | payloadObj:<br/> { <br/>name: "example", email: "example@gmail.com", age: "21"<br/>} | TRUE     |
+| **edit-item**   | Emit   | This emit is sent when the add button is clicked. On this event, a method can be called to execute the desired outcome                                                                                                                       | `<form-edit @edit-item="methodCall" />`                                              | TRUE     |
 
 **Example**
 
@@ -413,8 +395,7 @@ export default {
 
 | Property       | Type   | Description                                                                                      | Structure                                                                            | Required |
 |----------------|--------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------|
-| **
-tab-titles** | Array  | An array containing the titles of the components/elements being placed in the carousel.          | tabTitles: ['Overview','Edit', 'Add']                                                | TRUE     |
+| **tab-titles** | Array  | An array containing the titles of the components/elements being placed in the carousel.          | tabTitles: ['Overview','Edit', 'Add']                                                | TRUE     |
 
 The components/elements being placed in a carousel item need to be nested in a `<template></template>`. This tag is a
 slot with a tag that needs to match it to the tab title. Each item nested in the `<template></template>` tag will
@@ -458,38 +439,20 @@ represent a tab in the carousel.
 
 | Property                  | Type   | Description                                                                                                                                                  | Structure                                                                                                                                                            | Required |
 |---------------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **
-application-title**     | String | The title of the application that will be shown in the main toolbar at the top of the skeleton                                                               | applicationTitle: 'SPIN' //DEFAULT                                                                                                                                   | TRUE     |
-| **
-application-modules**   | Array  | An Array of the names of different SPIN 'modules'/'applications', along with a route link to the 'modules'/'applications'                                    | applicationModules: <br>[<br>{<br>name: 'SPINcpi', <br>icon: 'mdi-application', <br>route: ''<br>},<br>]                                                             | FALSE    |
-| **
-menu-data**             | Array  | An Array of menu objects defining the menus. This is where you can add or remove items from the menu drawer                                                  | menuData: <br>[<br>{<br>title: '', icon: '', <br>hasSubViews: boolean, <br>routeName: '', <br>subOptions: [<br>{title: '', icon: '', routeName: '',}<br>],<br>}<br>] | TRUE     |
-| **
-user-data**             | Object | This is a user data object containing the information of user retrieved from a backend/database service                                                      | userData: {//DATA},                                                                                                                                                  | FALSE    |
-| **
-impersonation-options** | Array  | A json file containing an Array of the impersonation options available                                                                                       | impersonationOptions: <br>[<br>'Extendas BV', 'Saxion', 'Shell', 'Total'<br>]                                                                                        | FALSE    |
-| **
-notifications**         | Array  | An Array of objects containing a notification. Each object represents a notification                                                                         | notifications: <br>[<br>{message: '', timestamp: "00:00", icon: ""},<br>]                                                                                            | FALSE    |
-| **
-img-src-1**             | String | A path to set a small sized img/logo for the main toolbar                                                                                                    | imgSrc1: '/PATH/TO/IMG'                                                                                                                                              | FALSE    |
-| **
-img-src-2**             | String | A path to set a bigger sized img/logo for the main toolbar                                                                                                   | imgSrc2: '/PATH/TO/IMG'                                                                                                                                              | FALSE    |
-| **
-set-application-name**  | $Emit  | This emit is sent when the application/module is changed, calling a method to update the title. <br>**
-RETURNS: name(
-STRING)**                                | `<skeleton-base @set-application-name="methodCall" />`                                                                                                              | FALSE    |
-| **
-clear-notifications**   | $Emit  | This emit is sent when the clear all button for the notifications is clicked, calling a method to clear notifications. <br>**
-RETURNS: name(
-STRING)**         | `<skeleton-base @clear-notifications="methodCall" />`                                                                                                               | FALSE    |
-| **
-go-to-route**           | $Emit  | This emit is sent whenever a redirect is needed, either from a button click or a click from the navigation drawer. Calling a method to navigate to the route | `<skeleton-base @go-to-route="methodCall" />`                                                                                                                       | FALSE    |
-| **
-go-to-route-search**    | $Emit  | This emit is sent whenever a redirect is needed, from the search bar. Calling a method to navigate to the route                                              | `<skeleton-base @go-to-search="methodCall" />`                                                                                                                      | FALSE    |
-| **
-stop-impersonation**    | $Emit  | This emit is sent when the impersonation option is cleared, calling a method to stop impersonation                                                           | `<skeleton-base @stop-impersonation="methodCall" />`                                                                                                                | FALSE    |
-| **
-logout**                | $Emit  | This emit is sent when the logout button is clicked, calling a method to logout the user                                                                     | `<skeleton-base @logout="methodCall" />`                                                                                                                            | FALSE    |
+| **application-title**     | String | The title of the application that will be shown in the main toolbar at the top of the skeleton                                                               | applicationTitle: 'SPIN' //DEFAULT                                                                                                                                   | TRUE     |
+| **application-modules**   | Array  | An Array of the names of different SPIN 'modules'/'applications', along with a route link to the 'modules'/'applications'                                    | applicationModules: <br>[<br>{<br>name: 'SPINcpi', <br>icon: 'mdi-application', <br>route: ''<br>},<br>]                                                             | FALSE    |
+| **menu-data**             | Array  | An Array of menu objects defining the menus. This is where you can add or remove items from the menu drawer                                                  | menuData: <br>[<br>{<br>title: '', icon: '', <br>hasSubViews: boolean, <br>routeName: '', <br>subOptions: [<br>{title: '', icon: '', routeName: '',}<br>],<br>}<br>] | TRUE     |
+| **user-data**             | Object | This is a user data object containing the information of user retrieved from a backend/database service                                                      | userData: {//DATA},                                                                                                                                                  | FALSE    |
+| **impersonation-options** | Array  | A json file containing an Array of the impersonation options available                                                                                       | impersonationOptions: <br>[<br>'Extendas BV', 'Saxion', 'Shell', 'Total'<br>]                                                                                        | FALSE    |
+| **notifications**         | Array  | An Array of objects containing a notification. Each object represents a notification                                                                         | notifications: <br>[<br>{message: '', timestamp: "00:00", icon: ""},<br>]                                                                                            | FALSE    |
+| **img-src-1**             | String | A path to set a small sized img/logo for the main toolbar                                                                                                    | imgSrc1: '/PATH/TO/IMG'                                                                                                                                              | FALSE    |
+| **img-src-2**             | String | A path to set a bigger sized img/logo for the main toolbar                                                                                                   | imgSrc2: '/PATH/TO/IMG'                                                                                                                                              | FALSE    |
+| **set-application-name**  | $Emit  | This emit is sent when the application/module is changed, calling a method to update the title. <br>**RETURNS: name(STRING)**                                | `<skeleton-base @set-application-name="methodCall" />`                                                                                                               | FALSE    |
+| **clear-notifications**   | $Emit  | This emit is sent when the clear all button for the notifications is clicked, calling a method to clear notifications. <br>**RETURNS: name(STRING)**         | `<skeleton-base @clear-notifications="methodCall" />`                                                                                                                | FALSE    |
+| **go-to-route**           | $Emit  | This emit is sent whenever a redirect is needed, either from a button click or a click from the navigation drawer. Calling a method to navigate to the route | `<skeleton-base @go-to-route="methodCall" />`                                                                                                                        | FALSE    |
+| **go-to-route-search**    | $Emit  | This emit is sent whenever a redirect is needed, from the search bar. Calling a method to navigate to the route                                              | `<skeleton-base @go-to-search="methodCall" />`                                                                                                                       | FALSE    |
+| **stop-impersonation**    | $Emit  | This emit is sent when the impersonation option is cleared, calling a method to stop impersonation                                                           | `<skeleton-base @stop-impersonation="methodCall" />`                                                                                                                 | FALSE    |
+| **logout**                | $Emit  | This emit is sent when the logout button is clicked, calling a method to logout the user                                                                     | `<skeleton-base @logout="methodCall" />`                                                                                                                             | FALSE    |
 
 **Example**
 
