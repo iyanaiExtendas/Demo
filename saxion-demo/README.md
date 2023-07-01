@@ -475,7 +475,6 @@ represent a tab in the carousel.
       @stop-impersonation="handleStopImpersonation"
       @logout="handleLogout"
   ></skeleton-base>
-
 </template>
 
 <script>
