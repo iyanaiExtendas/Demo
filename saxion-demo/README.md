@@ -479,9 +479,7 @@ represent a tab in the carousel.
 </template>
 
 <script>
-import
-
-...
+import...
 
 export default {
   name: "ext-skeleton",
