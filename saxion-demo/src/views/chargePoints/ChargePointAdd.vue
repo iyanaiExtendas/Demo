@@ -3,7 +3,7 @@
   <form-add
       :form-fields="formFields"
       :payload="chargePointPayload"
-      @add-item="addUser"/>
+      @add-item="addChargePoint"/>
 
 
 </template>
@@ -65,7 +65,7 @@ export default {
 
   },
   methods: {
-    async addUser() {
+    async addChargePoint() {
       const colRef = collection(db, 'chargePoints');
       const chargePoint = this.chargePointPayload;
 

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "s": "vue-cli-service serve",
-    "b": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "ext": "npm install @extendas/extendas-component-library@latest --registry=https://npm.pkg.github.com/\n"
   },
   "dependencies": {
