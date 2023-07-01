@@ -11,13 +11,11 @@ cd saxion-demo
 npm install
 ```
 
-### NPM login command, **password is your GitHub access token**
+### If you are not logged in to GitHub NPM Registry or get an error on installing @extendas/extendas-component-library
+**password is your GitHub access token**
 ```
- npm login --auth-type=legacy --registry=https://npm.pkg.github.com
-```
+npm login --auth-type=legacy --registry=https://npm.pkg.github.com
 
-### Install @extendas/component library
-```
 npm install @extendas/extendas-component-library@latest --registry=https://npm.pkg.github.com/
 ```
 

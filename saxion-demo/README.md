@@ -16,6 +16,8 @@ same, or very similar aesthetic with little effort.
 
 This is document entails all the necessary information needed to utilise these components for development.
 
+---
+
 ## Library Breakdown
 
 Certain tools/frameworks were used to develop these components. Som being fundamental to the functionality and look of
@@ -577,48 +579,6 @@ export default {
 
 ```
 
----
-
-## Run Locally
-
-Go to the project root directory
-
-```bash
-  cd ./extendas-component-library
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run serve
-```
-
-## Test components
-
-Run the tests on the components
-
-```bash
-  cd ./extendas-component-library
-  npm install
-  npm run test:unit
-```
-
-View the results of the tests run
-
-## Publish
-
-Build and publish this component library bundle
-
-```
-npm run build-bundle
-npm publish
-```
 
 
 
