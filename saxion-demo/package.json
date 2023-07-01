@@ -3,18 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "s": "vue-cli-service serve",
-    "b": "vue-cli-service build"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "ext": "npm install @extendas/extendas-component-library@latest --registry=https://npm.pkg.github.com/\n"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@extendas/extendas-component-library": "^0.28.0",
+    "@extendas/extendas-component-library": "^0.41.0",
     "@jest/globals": "^29.5.0",
     "@mdi/font": "5.9.55",
     "@rollup/plugin-terser": "^0.4.3",
     "axios": "^1.4.0",
     "axios-mock-adapter": "^1.21.4",
     "core-js": "^3.8.3",
+    "ext": "^1.7.0",
     "firebase": "^9.23.0",
     "pinia": "^2.0.36",
     "register-service-worker": "^1.7.2",

@@ -1,18 +1,17 @@
 <template>
-  <SubViewHeader title="Overview" />
-  <FormOverview
+  <SubViewHeader title="User Overview" />
+
+  <form-overview
       :form-fields="formFields"
       :edit-route-path="editRoute.path"
       @delete-item-by-id="deleteUser" />
-
 
 </template>
 
 <script>
 import SubViewHeader from "@/components/SubViewHeader";
-import FormOverview from "@extendas/extendas-component-library/src/components/form-types/FormOverview";
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
-import {deleteUser, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import {deleteUser, signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '@/firebase/init.js'
 import db from "@/firebase/init";
 import router from "@/router";
@@ -21,7 +20,6 @@ export default {
   name: "UserOverview",
   components: {
     SubViewHeader,
-    FormOverview
   },
   data() {
     return {
@@ -43,7 +41,7 @@ export default {
         {title: "email", value: this.user.email, type: "text"},
         {title: "first_name", value: this.user.first_name, type: "text"},
         {title: "last_name", value: this.user.last_name, type: "number"},
-        {title: "roles", value: this.user.roles, type: "properties"},
+        {title: "roles", value: this.user.roles, type: "options"},
       ]
     }
   },
@@ -84,13 +82,16 @@ export default {
         alert('User deleted successfully');
         console.log('User deleted successfully');
 
+        // Redirect to the users page
+        const route = router.resolve({
+          name: 'Users',
+        });
+        this.$router.push(route.path);
+
       } catch (error) {
         console.error('Error deleting user:', error);
       }
     },
-
-
-
   },
 }
 </script>

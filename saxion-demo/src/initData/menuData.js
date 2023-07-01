@@ -12,9 +12,9 @@ export default [
         subOptions: []
     },
     {
-        title: 'Associations', icon: 'mdi-home-group', hasSubViews: true, routeName: '',
+        title: 'Group', icon: 'mdi-home-group', hasSubViews: true, routeName: '',
         subOptions: [
-            {title: 'Locations', icon: 'mdi-map-marker-outline', routeName: ''},
+            {title: 'Forms', icon: 'mdi-form-select', routeName: 'Groups'},
             {title: 'Organizations', icon: 'mdi-office-building-outline', routeName: ''},
         ]
     },
